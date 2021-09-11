@@ -264,12 +264,12 @@ imprimir('soltero');
     -Esta función fn recibe un string (a:string) y retorna null (=> void)
 */
 
-// Otro punto a resaltar es que la f
+// Otro punto a resaltar es que la función saludar4 ejecuta imprimirEnConsola porque le manda el parámetro "Hola Mundo"
 function saludar4(fn: (a:string) => void) {
     fn("Hola mundo")
 }
 
-// Esta función solo imprime en consola un parametro
+// Esta función solo imprime en consola un parámetro
 function imprimirEnConsola(s: string) {
     console.log(s);
 }
