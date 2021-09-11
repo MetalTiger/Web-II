@@ -150,13 +150,28 @@ imprimir('soltero');
     -La función saludar4 recibe como parametro otra función llamada fn
     -Esta función fn recibe un string (a:string) y retorna null (=> void)
 */
-// Otro punto a resaltar es que la f
+// Otro punto a resaltar es que la función saludar4 ejecuta imprimirEnConsola porque le manda el parámetro "Hola Mundo"
 function saludar4(fn) {
     fn("Hola mundo");
 }
-// Esta función solo imprime en consola un parametro
+// Esta función solo imprime en consola un parámetro
 function imprimirEnConsola(s) {
     console.log(s);
 }
 // Se manda la función imprimirEnConsola a saludar4, esta define el parámetro y al hacer esto se ejecuta imprimirEnConsola
 saludar4(imprimirEnConsola);
+var Luis = { edad: 20 };
+var Pedro = Luis;
+Luis.edad++;
+console.log(Luis.edad);
+console.log(Pedro.edad);
+var impirmirTareas = function (v) {
+    v.forEach(function (x) {
+        console.log(x);
+    });
+};
+var misTareas = [
+    "levantarse",
+    "lavarse los dientes"
+];
+impirmirTareas(misTareas);
