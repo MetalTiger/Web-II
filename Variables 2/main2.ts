@@ -171,11 +171,11 @@ imprimir({
 
 // readonly
 // Atributos de solo lectura, de forma que no se pueden modificar una vez definidos
-interface Perro {
+interface Perro2 {
     readonly raza: string;
 }
 
-const miPerro: Perro = { raza: "Pug"}
+const miPerro: Perro2 = { raza: "Pug"}
 console.log(`La raza de mi perro es ${miPerro.raza}`);
 
 /* 

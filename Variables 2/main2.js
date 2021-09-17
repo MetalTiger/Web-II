@@ -177,3 +177,5 @@ var prius2 = ["Toyota", 2015];
 var marca = prius2[0], modelo = prius2[1]; // Y se puede dar un nombre a cada valor de la tupla
 console.log("La marca del prius es: ", marca);
 console.log("El modelo del prius es: " + modelo);
+var a = ["a", 1, true, false, false];
+var prius3 = ["Toyota", 2014];
