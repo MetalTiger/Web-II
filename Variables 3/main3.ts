@@ -36,9 +36,14 @@ const miNombre = new Saludo("Kevin");
 //miNombre.nombre = "Juan"; // Esto es un error ya que no se puede cambiar el valor
 
 // Sobrecarga de constructores
+/* 
+    Se puede simular la sobrecarga de constructores, nosotros definimoslas cabeceras de la sobrecarga
+    y dentro del constructor que tiene cuerpo se hacen los cambios o implementaciones
+
+*/
 class Punto2 {
     constructor (x: number, y: number);
-    constructor (s: string)
+    constructor (s: string);
     constructor (xs: number | string, y?: number){
 
 
