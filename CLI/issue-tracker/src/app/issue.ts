@@ -4,6 +4,6 @@ export interface Issue {
     description: string;
     priority: 'low' | 'high';
     type: 'Feature' | 'Bug' | 'Documentation';
-    complete?: Date;
+    completed?: Date;
 
 }
