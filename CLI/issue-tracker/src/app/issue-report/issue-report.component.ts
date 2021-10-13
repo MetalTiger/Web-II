@@ -1,6 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { EventEmitter } from 'stream';
+import { EventEmitter } from '@angular/core';
 import { IssuesService } from '../issues.service';
 
 @Component({
