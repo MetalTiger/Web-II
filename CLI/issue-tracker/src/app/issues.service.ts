@@ -6,6 +6,7 @@ import { issues } from 'src/assets/mock-issues';
   providedIn: 'root'
 })
 export class IssuesService {
+  //private issues: Issue[] = issues; // Datos de prueba
   private issues: Issue[] = [];
 
   constructor() { }
