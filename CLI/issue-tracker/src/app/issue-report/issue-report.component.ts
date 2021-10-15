@@ -15,14 +15,20 @@ export class IssueReportComponent implements OnInit {
 
   ngOnInit(): void {
     this.issueForm = this.builder.group({
-      title: [''],
+      title: ['', Validators.required],
       description: [''],
-      priority: [''],
-      type: [''],
+      priority: ['', Validators.required],
+      type: ['', Validators.required],
     });
   }
 
   addIssue(){
+
+    if (this.issueForm && this.issueForm.invalid) {
+      this.issueForm.markAllAsTouched();
+      return
+    }
+
     this.issueService.createIssue(this.issueForm?.value);
     this.formClose.emit();
   }
