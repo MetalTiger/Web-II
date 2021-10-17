@@ -39,4 +39,15 @@ export class IssuesService {
     return [];
   }
 
+  editIssue(issue: Issue) {
+    const selectedIssue: Issue = issue
+    //console.log(selectedIssue.issueNo + " " + selectedIssue.title);
+
+    const index = this.issues.findIndex((i) => i.issueNo === issue.issueNo);
+    this.issues[index] = selectedIssue;
+    //console.log(index)
+    //console.log(this.issues[index])
+
+  }
+
 }
