@@ -1,4 +1,4 @@
-<ng-container *ngIf="showReportIssue === false">
+<ng-container *ngIf="showReportIssue === false && showEditIssue === false">
     <button class="btn btn-primary" (click)="showReportIssue = true"> Add new issue</button>
     <clr-datagrid>
         <clr-dg-column [clrDgField]="'issueNo'" [clrDgColType]="'number'">Issue No</clr-dg-column>
@@ -9,6 +9,7 @@
             <clr-dg-row *clrDgItems="let issue of issues">
                 <clr-dg-action-overflow>
                     <button class="action-item" (click)="selectedIssue = issue">Resolve</button>
+                    <button class="action-item" (click)="selectedIssue = issue; showEditIssue = true">Edit</button>
                 </clr-dg-action-overflow>
                 
                 <clr-dg-cell>{{issue.issueNo}}</clr-dg-cell>
@@ -24,4 +25,5 @@
     </clr-datagrid>
 </ng-container>
 <app-issue-report *ngIf="showReportIssue == true" (formClose)="onCloseReport()"></app-issue-report>
-<app-confirm-dialog *ngIf="selectedIssue" [issueNo]="selectedIssue.issueNo" (confirm)="onConfirm($event)"></app-confirm-dialog>
+<app-issue-editor *ngIf="showEditIssue == true" [issue]="selectedIssue" (formClose)= "onCloseEdit()" ></app-issue-editor>
+<app-confirm-dialog *ngIf="selectedIssue && showEditIssue === false" [issueNo]="selectedIssue.issueNo" (confirm)="onConfirm($event)"></app-confirm-dialog>
