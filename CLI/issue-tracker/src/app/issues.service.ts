@@ -22,7 +22,7 @@ export class IssuesService {
 
   completeIssue(issue: Issue){
     const selectedIssue: Issue = {
-      ...issue,
+      ...issue,   // Se ignoran los otros parametros y te vas al último
       completed: new Date(),
     };
 

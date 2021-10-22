@@ -13,14 +13,14 @@ export class IssueListComponent implements OnInit {
   showEditIssue = false;
   selectedIssue: Issue | null = null;
 
-  constructor(private issueService: IssuesService) { }
+  constructor(private issueService: IssuesService) { }  // si queremos usar el servicio debe estar inyectado en el constructor además de importarlo
 
   private getIssues(){
-    this.issues = this.issueService.getPendingIssues();
+    this.issues = this.issueService.getPendingIssues(); // El controlador pide las cosas al servicio, y este trae la info ya sea por API's o algo parecido
   }
 
   ngOnInit(): void {
-    this.getIssues();
+    this.getIssues();   // Este se pone aquí para que en cuanto entre se traiga los datos
   }
 
   onCloseReport(){

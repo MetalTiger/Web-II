@@ -1,17 +1,22 @@
 <ng-container *ngIf="showReportIssue === false && showEditIssue === false">
-    <button class="btn btn-primary" (click)="showReportIssue = true"> Add new issue</button>
+    <button class="btn btn-primary" (click)="showReportIssue = true"> Add new issue</button> 
+    <!-- Las cosas entre paréntesis son asociaciones a eventos, de forma que al dar click desencadenará lo que este despues del =, pudiendo ser asignaciones o llamadas a otros métodos -->
     <clr-datagrid>
         <clr-dg-column [clrDgField]="'issueNo'" [clrDgColType]="'number'">Issue No</clr-dg-column>
         <clr-dg-column [clrDgField]="'type'">Type</clr-dg-column>
         <clr-dg-column [clrDgField]="'title'">Title</clr-dg-column>
             <clr-dg-column [clrDgField]="'description'">Description</clr-dg-column>
             <clr-dg-column [clrDgField]="'priority'">Priority</clr-dg-column>
-            <clr-dg-row *clrDgItems="let issue of issues">
+            <clr-dg-row *clrDgItems="let issue of issues">  
+                <!-- 
+                    Se recorre la variable issues mediante un for each con el clrDgItems, Como usamos Clarity Design usamos esta función, si no lo usaramos, tendriamos que usar el *ngFor
+                    Los asteriscos significan directivas estructurables, las cuales alteran el DOM del HTML
+                -->
                 <clr-dg-action-overflow>
                     <button class="action-item" (click)="selectedIssue = issue">Resolve</button>
                     <button class="action-item" (click)="selectedIssue = issue; showEditIssue = true">Edit</button>
                 </clr-dg-action-overflow>
-                
+
                 <clr-dg-cell>{{issue.issueNo}}</clr-dg-cell>
                 <clr-dg-cell>{{issue.type}}</clr-dg-cell>
                 <clr-dg-cell>{{issue.title}}</clr-dg-cell>
@@ -26,4 +31,6 @@
 </ng-container>
 <app-issue-report *ngIf="showReportIssue == true" (formClose)="onCloseReport()"></app-issue-report>
 <app-issue-editor *ngIf="showEditIssue == true" [issue]="selectedIssue" (formClose)= "onCloseEdit()" ></app-issue-editor>
+<!-- formClose se genera en app-issue-report, es decir se genera un evento en un componente a partir de otro y el que lo generó se hace responsable de la funcionalidad de este evento -->
 <app-confirm-dialog *ngIf="selectedIssue && showEditIssue === false" [issueNo]="selectedIssue.issueNo" (confirm)="onConfirm($event)"></app-confirm-dialog>
+<!-- Los corchetes son un método de comunicación para pasar datos, puede ser una expresión o una variable -->
