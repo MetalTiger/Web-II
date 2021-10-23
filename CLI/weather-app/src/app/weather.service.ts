@@ -14,7 +14,7 @@ export class WeatherService {
   // Http Params hacer el import buscandolo
   getWeather(city: string): Observable<Weather> {
     const options = new HttpParams()
-      .set('units', 'metrics')
+      .set('units', 'metric')
       .set('q', city)
       .set('appId', environment.apiKey);
       
