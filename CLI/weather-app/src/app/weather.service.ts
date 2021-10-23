@@ -9,13 +9,16 @@ import { environment } from 'src/environments/environment';
 })
 export class WeatherService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   // Http Params hacer el import buscandolo
   getWeather(city: string): Observable<Weather> {
-    
-  
-    
+    const options = new HttpParams()
+      .set('units', 'metrics')
+      .set('q', city)
+      .set('appId', environment.apiKey);
+      
+    return this.http.get<Weather>(environment.apiUrl + 'weather', {params: options});
   }
 
 }
