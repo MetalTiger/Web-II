@@ -12,10 +12,12 @@ export interface Weather {
         country: string;
     };
     name: string;
+    
 
 }
 
 interface WeatherInfo {
     main: string;
+    description: string;
     icon: string;
 }
