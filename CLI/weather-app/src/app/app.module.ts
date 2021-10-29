@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon'
 import { MatInputModule } from '@angular/material/input';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { environment } from '../environments/environment'
     BrowserAnimationsModule,
     HttpClientModule,
     MatCardModule,
+    MatSnackBarModule,
     MatIconModule,
     MatInputModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
