@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { UiControlsComponent } from './ui-controls.component';
 import { CardListComponent } from './card-list/card-list.component';
 import { CommonModule } from "@angular/common";
+import { DragDropModule } from "@angular/cdk/drag-drop";
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import { CommonModule } from "@angular/common";
     CardListComponent
   ],
   imports: [
-    CommonModule  // Necesaria para la directiva *ngFor
+    CommonModule,  // Necesaria para la directiva *ngFor
+    DragDropModule // Usado para arrastrar y soltar
   ],
   exports: [
     UiControlsComponent,
