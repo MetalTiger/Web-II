@@ -5,4 +5,5 @@
 }
 .card {
     width: 200px;
+    cursor: grab;
 }
